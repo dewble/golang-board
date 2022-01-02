@@ -4,12 +4,12 @@
 게시판 > 기본 CRUD 기능 구현
 
 # Backend
-OS : macOS
-DB : MariaDB 10.6.4
-Language : go1.17
-Framework : gin
+OS : macOS  
+DB : MariaDB 10.6.4  
+Language : go1.17  
+Framework : gin  
 
 # Frontend
-npm : 6.14.15
-node : v14.18.0
-React
+npm : 6.14.15  
+node : v14.18.0  
+React  
