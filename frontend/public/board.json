@@ -1,0 +1,22 @@
+[{
+    "id" : 1,
+    "title" : "title1",
+    "body":"body1",
+    "created_at":"A very authentic and beautiful instrument!!",
+    "updated_at" : "2022-01-01",
+    "comment" : "comment1"
+}, {
+    "id" : 2,
+    "title" : "title1",
+    "body":"body1",
+    "created_at":"A very authentic and beautiful instrument!!",
+    "updated_at" : "2022-01-01",
+    "comment" : "comment1"
+},{
+    "id" : 3,
+    "title" : "title1",
+    "body":"body1",
+    "created_at":"A very authentic and beautiful instrument!!",
+    "updated_at" : "2022-01-01",
+    "comment" : "comment1"
+}]
