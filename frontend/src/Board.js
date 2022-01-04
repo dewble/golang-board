@@ -5,6 +5,17 @@ class Board extends React.Component {
         // title 색을 지정할 수 있는 변수 추가. 내가 쓴글일 경우 빨간색
         const titleColor = (this.props.myboard) ? "text-danger" : "text-dark";
         return (
+            <table class="table">
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Body</th>
+                    <th>Comment</th>
+                </tr>
+            </thead>
+            <tbody>
             <div className="col-md-6 col-lg-4 d-flex align-items-stretch">
                 <div className="card mb-3">
                     <div className="board-board">
@@ -20,6 +31,8 @@ class Board extends React.Component {
                     </div>
                 </div>
             </div>
+            </tbody>
+            </table>
         );
     }
 }
