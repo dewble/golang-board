@@ -151,8 +151,8 @@ class RegistrationForm extends React.Component {
             return;
         }
         const requestBody = {
-            firstname: firstlastname[0],
-            lastname: firstlastname[1],
+            firstname: firstlastname[1],
+            lastname: firstlastname[0],
             email: userInfo.email,
             password: userInfo.pass1
         };
@@ -173,7 +173,7 @@ class RegistrationForm extends React.Component {
                     <h5 className="mb-4">Registration</h5>
                     <div className="form-group">
                         <label htmlFor="username">User Name:</label>
-                        <input id="username" name='username' className="form-control" placeholder='John Doe' type='text' onChange={this.handleChange} />
+                        <input id="username" name='username' className="form-control" placeholder='한 종민' type='text' onChange={this.handleChange} />
                     </div>
 
                     <div className="form-group">
@@ -181,11 +181,11 @@ class RegistrationForm extends React.Component {
                         <input type="email" name='email' className="form-control" id="email" onChange={this.handleChange} />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="pass">Password:</label>
+                        <label htmlFor="pass">비밀번호:</label>
                         <input type="password" name='pass1' className="form-control" id="pass1" onChange={this.handleChange} />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="pass">Confirm password:</label>
+                        <label htmlFor="pass">비밀번호 확인:</label>
                         <input type="password" name='pass2' className="form-control" id="pass2" onChange={this.handleChange} />
                     </div>
                     <div className="form-row text-center">
@@ -210,5 +210,37 @@ export class SignInModalWindow extends React.Component {
         };
         this.handleNewUser = this.handleNewUser.bind(this);
         this.handleModalClose = this.handleModalClose.bind(this);
+    }
+
+    handleNewUser() {
+        this.setState({
+          showRegistrationForm: true
+        });
+    }
+    
+    handleModalClose(){
+        this.setState({
+            showRegistrationForm: false
+        });
+    }
+    
+    render() {
+        // state 객체의 값에 따라 SignInForm이나 RegistrationForm 컴포넌트를 모달 윈도우에 추가한다.
+        let modalBody = <SignInForm handleNewUser={this.handleNewUser} handleSignedIn={this.props.handleSignedIn} />
+        if (this.state.showRegistrationForm === true) {
+            modalBody = <RegistrationForm handleSignedIn={this.props.handleSignedIn} />
+        }
+        return (
+            <Modal id="register" tabIndex="-1" role="dialog" isOpen={this.props.showModal} toggle={this.props.toggle} onClosed={this.handleModalClose}>
+                <div role="document">
+                    <ModalHeader toggle={this.props.toggle} className="bg-success text-white">
+                        로그인
+                    </ModalHeader>
+                    <ModalBody>
+                        {modalBody}
+                    </ModalBody>
+                </div>
+            </Modal>
+        );
     }
 }
