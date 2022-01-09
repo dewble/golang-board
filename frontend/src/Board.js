@@ -27,7 +27,7 @@ class Board extends React.Component {
                         btn-success 클래스를 사용해 Buy 버튼을 초록색으로 변경 
                         Buy 버튼을 클릭하면 ShowCommentModal()를 호출하고 모달 윈도우를 출력
                         */}
-                        <a className="btn btn-success text-white" onClick={()=>{this.props.ShowCommentModal(this.props.ID)}}>Comment</a>
+                        <button className="btn btn-success text-white" onClick={()=>{this.props.ShowCommentModal(this.props.ID)}}>Comment</button>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@ export default class BoardContainer extends React.Component {
         super(props);
         // 컴포넌트의 state 객체 초기화
         this.state = {
-            cards: []
+            boards: []
         };
     }
 

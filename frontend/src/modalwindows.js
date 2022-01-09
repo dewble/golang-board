@@ -101,10 +101,10 @@ class SignInForm extends React.Component {
                     </div>
                     <div className="form-row text-center">
                         <div className="col-12 mt-2">
-                            <button type="submit" className="btn btn-success btn-large" >Sign In</button>
+                            <button type="submit" className="btn btn-success btn-large" >로그인</button>
                         </div>
                         <div className="col-12 mt-2">
-                            <button className="btn btn-link text-info" onClick={() => this.props.handleNewUser()}> New User? Register</button>
+                            <button className="btn btn-link text-info" onClick={() => this.props.handleNewUser()}>회원가입</button>
                         </div>
                     </div>
                 </form>
